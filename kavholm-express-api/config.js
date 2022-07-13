@@ -13,9 +13,8 @@ function getDatabaseUri() {
     : "postgres";
   const dbHost = process.env.DATABASE_HOST || "localhost";
   const dbPort = process.env.DATABASE_PORT || 5432;
-  const dbTestName =
-    process.env.DATABASE_TEST_NAME || "kavholm_test_advance_test";
-  const dbProdName = process.env.DATABASE_NAME || "kavholm_test_advance";
+  const dbTestName = process.env.DATABASE_TEST_NAME || "kavholm_test";
+  const dbProdName = process.env.DATABASE_NAME || "kavholm";
   const dbName = process.env.NODE_ENV === "test" ? dbTestName : dbProdName;
 
   return (
@@ -26,7 +25,7 @@ function getDatabaseUri() {
 
 const BCRYPT_WORK_FACTOR = IS_TESTING ? 1 : 13;
 
-console.log("Advance Kavholm Config:".red);
+console.log("Kavholm Config:".red);
 console.log("PORT:".blue, PORT);
 console.log("SECRET_KEY:".blue, SECRET_KEY);
 console.log("IS_TESTING:".blue, IS_TESTING);
